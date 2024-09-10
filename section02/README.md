@@ -9,4 +9,8 @@
 
 - 이를 위해 pre-fetching이 있다.
 
-> ## 페이지 이동전에 pre-feching을 이용해 미리 페이지 js 번들을 불러옴
+> #### 페이지 이동전에 pre-feching을 이용해 미리 페이지 js 번들을 불러옴
+
+# API-routes
+
+- src -> pages -> api에서 파일을 생성하면 자동으로 api 응답
