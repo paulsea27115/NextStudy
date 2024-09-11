@@ -14,3 +14,7 @@
 # API-routes
 
 - src -> pages -> api에서 파일을 생성하면 자동으로 api 응답
+
+# css 사용
+
+- css는 기존 react에서 사용하는 방식과 다른 방식으로 css을 .module.css 확장자로 바꾸어 css의 스타일 겹침을 해결했다.
