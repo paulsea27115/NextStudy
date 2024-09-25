@@ -1,41 +1,41 @@
 // css module
-import { ReactNode, useEffect } from "react";
+import { ReactNode } from "react";
 import style from "./index.module.css";
 import SearchableLayout from "@/components/searchable-layout";
-import books from "@/mock/books.json";
 import BookItem from "@/components/book-item";
 import { InferGetServerSidePropsType } from "next";
+import fetchBooks from "@/lib/fetch-books";
+import fetchRandomBooks from "@/lib/fetch-random-books";
 
-export const getServerSideProps = () => {
-  // 컴포넌트 보다 먼저 실행이 되어서, 텀포넌트에 필요한 데이터를 불러오는 함수
-
-  const data = "hello";
+export const getServerSideProps = async () => {
+  const [allBooks, recoBooks] = await Promise.all([
+    fetchBooks(),
+    fetchRandomBooks(),
+  ]);
 
   return {
     props: {
-      data,
+      allBooks,
+      recoBooks,
     },
   };
 };
 
 export default function Home({
-  data,
+  allBooks,
+  recoBooks,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
-  useEffect(() => {
-    console.log(window);
-  }, []);
-
   return (
     <div className={style.container}>
       <section>
         <h3>지금 추천하는 도서</h3>
-        {books.map((book) => (
+        {recoBooks.map((book) => (
           <BookItem key={book.id} {...book} />
         ))}
       </section>
       <section>
         <h3>등록된 모든 도서</h3>
-        {books.map((book) => (
+        {allBooks.map((book) => (
           <BookItem key={book.id} {...book} />
         ))}
       </section>

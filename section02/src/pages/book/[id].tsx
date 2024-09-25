@@ -1,4 +1,7 @@
+import { GetServerSidePropsContext, InferGetStaticPropsType } from "next";
 import style from "./[id].module.css";
+import { useRouter } from "next/router";
+import fetchOneBook from "@/lib/fetch-one-book";
 
 const mockData = {
   id: 1,
@@ -12,9 +15,28 @@ const mockData = {
     "https://shopping-phinf.pstatic.net/main_3888828/38888282618.20230913071643.jpg",
 };
 
-export default function Page() {
+export const getServerSideProps = async (
+  context: GetServerSidePropsContext
+) => {
+  const id = context.params!.id;
+
+  const book = await fetchOneBook(Number(id));
+
+  return {
+    props: {
+      book,
+    },
+  };
+};
+
+export default function Page({
+  book,
+}: InferGetStaticPropsType<typeof getServerSideProps>) {
+  if (!book) {
+    return "문제가 발생하였습니다 다시 시도해주세요";
+  }
   const { id, title, subTitle, description, author, publisher, coverImgUrl } =
-    mockData;
+    book;
 
   return (
     <div className={style.container}>
