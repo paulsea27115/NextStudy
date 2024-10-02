@@ -34,14 +34,26 @@
 
 - 가장 기본적인 사전 렌더링 방식
 - 요청이 들어올때 마다 사전 렌더링을 진행 함
+- getServerSideProps으로 사용 가능
 
 > ## 정적 사이트 생성(SSG) - Static Site Generation
 
 - 빌드 타임에 미리 페이지를 사전 렌더링 해둠
 - SSR의 단점을 해결하는 사전 렌더링 방식
+- getStaticProps으로 사용 가능
 
 ### 단점
 
 - 매번 똑같은 페이지만 응답함, 최신 데이터 반영은 어려움
+
+### getStaticPaths 사용
+
+- paths 배열 안에 객체로 값을 젙달 가능
+
+#### fallback 옵션
+
+- false : 404 not found 반환
+- blocking : 즉시 생성 (SSR 같이)
+- true : 즉시 생성 + 페이지만 미리 반환
 
 > ## 증분 정적 재생성(ISR)
