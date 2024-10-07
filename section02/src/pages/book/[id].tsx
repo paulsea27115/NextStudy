@@ -52,7 +52,7 @@ export default function Page({
           <meta property="og:image" content="/thumbnail.png" />
           <meta property="og:title" content="한입북스" />
           <meta
-            property="og:descriptoin"
+            property="og:description"
             content="한입북스에 등록된 도서들을 만나보세요."
           />
         </Head>
@@ -72,7 +72,7 @@ export default function Page({
         <title>{title}</title>
         <meta property="og:image" content={coverImgUrl} />
         <meta property="og:title" content={title} />
-        <meta property="og:descriptoin" content={description} />
+        <meta property="og:description" content={description} />
       </Head>
       <div className={style.container}>
         <div
