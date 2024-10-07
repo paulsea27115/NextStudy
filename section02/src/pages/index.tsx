@@ -6,6 +6,7 @@ import BookItem from "@/components/book-item";
 import { InferGetServerSidePropsType, InferGetStaticPropsType } from "next";
 import fetchBooks from "@/lib/fetch-books";
 import fetchRandomBooks from "@/lib/fetch-random-books";
+import { revalidatePath } from "next/cache";
 
 export const getStaticProps = async () => {
   console.log("index page");

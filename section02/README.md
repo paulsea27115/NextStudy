@@ -56,4 +56,10 @@
 - blocking : 즉시 생성 (SSR 같이)
 - true : 즉시 생성 + 페이지만 미리 반환
 
-> ## 증분 정적 재생성(ISR)
+> ## 증분 정적 재생성(ISR) - Incremental Static Regeneraion
+
+- SSG 방식으로 생성된 페이지를 일정한 주기로 재생성 시키는 방법
+
+> ### 주문형 재 검증(On-Demand-ISR)
+
+- 요청을 받을때마다 페이지를 재생성 한는 방법
