@@ -1,4 +1,5 @@
-import ClientComponent from "@/components/client-component";
+import books from "@/mock/books.json";
+import BookItem from "@/components/book-item";
 
 export default function Page({
   searchParams,
@@ -7,13 +8,11 @@ export default function Page({
     q?: string;
   };
 }) {
-  console.log(searchParams.q);
   return (
     <div>
-      search page {searchParams.q}
-      <ClientComponent>
-        <></>
-      </ClientComponent>
+      {books.map((book) => (
+        <BookItem key={book.id} {...book} />
+      ))}
     </div>
   );
 }

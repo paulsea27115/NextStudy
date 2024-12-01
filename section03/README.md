@@ -11,3 +11,14 @@
 
 - 클라이언트 컴포넌트에서 서버 컴포넌트를 사용하면 서버 컴포넌트가 자동으로 클라이언트 컴포넌트로 바뀐다.
   - 이를 위해 children 형식으로 사용하면 클라이언트 컴포넌트에서 서버 클라이언트 컴포넌트를 사용할 수 있다.
+
+## 프리패칭
+
+> RSC Payload <- server components
+
+- static page : RSC , JS
+- dynamic : RSC(추후 변동 가능성)
+
+### query 값가져올떄
+
+- 기존 page에서는 router.query 로 했지만 app에서는 useSearchParams에서 get()으로 가져온다.
