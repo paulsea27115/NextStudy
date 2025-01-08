@@ -22,3 +22,7 @@
 ### query 값가져올떄
 
 - 기존 page에서는 router.query 로 했지만 app에서는 useSearchParams에서 get()으로 가져온다.
+
+## 데이터 패칭(서버에서 데이터 가져오기)
+
+- 서버 컴포넌트에서 바로 사용가능(async 사용)
