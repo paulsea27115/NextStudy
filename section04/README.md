@@ -26,3 +26,14 @@
 ## 데이터 패칭(서버에서 데이터 가져오기)
 
 - 서버 컴포넌트에서 바로 사용가능(async 사용)
+
+## 데이터 캐시(Data Cache)
+
+- Next 서버에 데이터 보관 가능
+- 영구 또는 특정 시간 주기로 갱신 가능
+- 사전 렌더링 단계에서 데이터 요청할때 일어남
+
+  - cache: no-store
+  - cache: force-cache
+  - next: revalidate
+  - next: {tags:['a']}
